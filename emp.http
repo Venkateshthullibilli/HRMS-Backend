@@ -1,0 +1,211 @@
+###
+
+POST http://localhost:3000/register/
+Content-Type: application/json
+
+{   
+    "username":"sravya",
+    "password": "sravya@4516",
+    "role": "HR Manager"
+}
+
+
+###
+
+POST http://localhost:3000/login/
+Content-Type: application/json
+
+{
+    "username":"sravya",
+    "password": "sravya@4516"
+}
+
+###
+
+GET http://localhost:3000/employees/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InNyYXZ5YSIsImlhdCI6MTcyMjUyMTc0NH0.EtnR0tO-vsia_SMtx9wWf4hpCgx1IRth6IXo4QhQbMc
+
+
+###
+
+DELETE http://localhost:3000/employees/2
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InNyYXZ5YSIsImlhdCI6MTcyMjUyMTc0NH0.EtnR0tO-vsia_SMtx9wWf4hpCgx1IRth6IXo4QhQbMc
+
+###
+
+
+GET http://localhost:3000/employees/1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InNyYXZ5YSIsImlhdCI6MTcyMjUyMTc0NH0.EtnR0tO-vsia_SMtx9wWf4hpCgx1IRth6IXo4QhQbMc
+
+###
+
+POST http://localhost:3000/departments/
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImthbWFsIiwiaWF0IjoxNzIyNTE0MDQyfQ._b_8X_f67DSit6dPT7kXXjpN7WYz9JUt4WrBKGy17Rw
+
+{
+    "name": "Finance"
+}
+
+###
+DELETE http://localhost:3000/departments/11
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InNyYXZ5YSIsImlhdCI6MTcyMjUyMTc0NH0.EtnR0tO-vsia_SMtx9wWf4hpCgx1IRth6IXo4QhQbMc
+
+
+###
+
+POST http://localhost:3000/roles/
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImthbWFsIiwiaWF0IjoxNzIyNTE0MDQyfQ._b_8X_f67DSit6dPT7kXXjpN7WYz9JUt4WrBKGy17Rw
+
+{
+    "title": "Sales Manager"
+}
+
+###
+
+
+GET http://localhost:3000/departments/
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImthbWFsIiwiaWF0IjoxNzIyNTE0MDQyfQ._b_8X_f67DSit6dPT7kXXjpN7WYz9JUt4WrBKGy17Rw
+
+
+###
+
+PUT http://localhost:3000/departments/1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImthbWFsIiwiaWF0IjoxNzIyNTE0MDQyfQ._b_8X_f67DSit6dPT7kXXjpN7WYz9JUt4WrBKGy17Rw
+
+{
+    "name": "IT"
+}
+
+###
+
+PUT http://localhost:3000/roles/1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImthbWFsIiwiaWF0IjoxNzIyNTE0MDQyfQ._b_8X_f67DSit6dPT7kXXjpN7WYz9JUt4WrBKGy17Rw
+
+{
+    "title": "IT Support Specialist"
+}
+
+###
+DELETE http://localhost:3000/roles/14
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InNyYXZ5YSIsImlhdCI6MTcyMjUyMTc0NH0.EtnR0tO-vsia_SMtx9wWf4hpCgx1IRth6IXo4QhQbMc
+
+
+###
+
+GET http://localhost:3000/roles/
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImthbWFsIiwiaWF0IjoxNzIyNTE0MDQyfQ._b_8X_f67DSit6dPT7kXXjpN7WYz9JUt4WrBKGy17Rw
+
+###
+
+GET http://localhost:3000/roles/13
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImthbWFsIiwiaWF0IjoxNzIyNTE0MDQyfQ._b_8X_f67DSit6dPT7kXXjpN7WYz9JUt4WrBKGy17Rw
+
+###
+
+DELETE http://localhost:3000/roles/13
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImthbWFsIiwiaWF0IjoxNzIyNTE0MDQyfQ._b_8X_f67DSit6dPT7kXXjpN7WYz9JUt4WrBKGy17Rw
+
+
+
+###
+
+POST http://localhost:3000/performance/
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImthbWFsIiwiaWF0IjoxNzIyNTE0MDQyfQ._b_8X_f67DSit6dPT7kXXjpN7WYz9JUt4WrBKGy17Rw
+
+###
+DELETE http://localhost:3000/performance/1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InNyYXZ5YSIsImlhdCI6MTcyMjUyMTc0NH0.EtnR0tO-vsia_SMtx9wWf4hpCgx1IRth6IXo4QhQbMc
+
+
+###
+POST http://localhost:3000/employees/
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImthbWFsIiwiaWF0IjoxNzIyNTE0MDQyfQ._b_8X_f67DSit6dPT7kXXjpN7WYz9JUt4WrBKGy17Rw 
+
+{
+    "firstName": "Vini",
+      "lastName": "duggu",
+      "email": "vini7894@gmail.com",
+      "phone": "9200475362",
+      "hireDate": "2024-08-02",
+      "departmentId": 13,
+      "roleId": 11
+}
+
+
+###
+
+GET http://localhost:3000/employees/
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImthbWFsIiwiaWF0IjoxNzIyNTE0MDQyfQ._b_8X_f67DSit6dPT7kXXjpN7WYz9JUt4WrBKGy17Rw 
+
+
+###
+PUT http://localhost:3000/employees/3
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImthbWFsIiwiaWF0IjoxNzIyNTE0MDQyfQ._b_8X_f67DSit6dPT7kXXjpN7WYz9JUt4WrBKGy17Rw 
+
+{
+    "firstName": "Vini",
+      "lastName": "duggu",
+      "email": "vini7894@gmail.com",
+      "phone": "9200475362",
+      "hireDate": "2024-06-12",
+      "departmentId": 13,
+      "roleId": 11
+}
+
+###
+DELETE http://localhost:3000/employees/2
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImthbWFsIiwiaWF0IjoxNzIyNTE0MDQyfQ._b_8X_f67DSit6dPT7kXXjpN7WYz9JUt4WrBKGy17Rw
+
+###
+
+
+POST  http://localhost:3000/performance/
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImthbWFsIiwiaWF0IjoxNzIyNTE0MDQyfQ._b_8X_f67DSit6dPT7kXXjpN7WYz9JUt4WrBKGy17Rw
+
+{
+"employeeId": 2, 
+"reviewDate": "2024-06-28",
+"rating": 5,
+"comments": "Excellent project"
+}
+
+###
+
+GET  http://localhost:3000/performance/
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImthbWFsIiwiaWF0IjoxNzIyNTE0MDQyfQ._b_8X_f67DSit6dPT7kXXjpN7WYz9JUt4WrBKGy17Rw
+
+###
+
+PUT  http://localhost:3000/performance/11
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImthbWFsIiwiaWF0IjoxNzIyNTE0MDQyfQ._b_8X_f67DSit6dPT7kXXjpN7WYz9JUt4WrBKGy17Rw
+
+{
+"employeeId": 1, 
+"reviewDate": "2024-09-15",
+"rating": 5,
+"comments": "Excellent project"
+}
+
+### 
+
+GET  http://localhost:3000/performance/12
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImthbWFsIiwiaWF0IjoxNzIyNTE0MDQyfQ._b_8X_f67DSit6dPT7kXXjpN7WYz9JUt4WrBKGy17Rw
+
+###
