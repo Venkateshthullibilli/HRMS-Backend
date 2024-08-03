@@ -32,6 +32,18 @@ initializeDBAndServer();
 
 app.post("/register/", async (request, response) => {
   const { username, password, role } = request.body;
+  if (!username){
+    response.status(400).json({error: "Username is required"})
+ }
+
+   if (!password){
+    response.status(400).json({error: "Password is required"})
+ }
+
+   if (!role){
+    response.status(400).json({error: "Role is required"})
+ }
+  
   try {
     const hashedPassword = await bcrypt.hash(request.body.password, 10);
     const selectUserQuery = `SELECT * FROM users WHERE username = '${username}'`;
@@ -63,6 +75,15 @@ app.post("/register/", async (request, response) => {
 
 app.post("/login/", async (request, response) => {
   const { username, password } = request.body;
+
+   if (!username){
+    response.status(400).json({error: "Username is required"})
+ }
+
+   if (!password){
+    response.status(400).json({error: "Password is required"})
+ }
+
   try {
     const selectUserQuery = `SELECT * FROM users WHERE username = '${username}'`;
     const dbUser = await db.get(selectUserQuery);
@@ -174,6 +195,29 @@ app.post(
       departmentId,
       roleId,
     } = request.body;
+    if (!firstName){
+    response.status(400).json({error: "FirstName is required"})
+ }
+
+   if (!lastName){
+    response.status(400).json({error: "LastName is required"})
+ }
+
+     if (!email){
+    response.status(400).json({error: "Email is required"})
+ }
+
+   if (!hireDate){
+    response.status(400).json({error: "Hiredate is required"})
+ }
+     if (!departmentId){
+    response.status(400).json({error: "Department id is required"})
+ }
+
+   if (!roleId){
+    response.status(400).json({error: "Role id is required"})
+ }
+    
     try {
       const addNewEmployee = `
             INSERT INTO employees(first_name,last_name,email,phone,hire_date,department_id,role_id)
@@ -212,6 +256,31 @@ app.put(
       departmentId,
       roleId,
     } = request.body;
+
+       if (!firstName){
+    response.status(400).json({error: "FirstName is required"})
+ }
+
+   if (!lastName){
+    response.status(400).json({error: "LastName is required"})
+ }
+
+     if (!email){
+    response.status(400).json({error: "Email is required"})
+ }
+
+   if (!hireDate){
+    response.status(400).json({error: "Hiredate is required"})
+ }
+     if (!departmentId){
+    response.status(400).json({error: "Department id is required"})
+ }
+
+   if (!roleId){
+    response.status(400).json({error: "Role id is required"})
+ }
+    
+    
     try {
       const updateEmployee = `
             UPDATE
@@ -295,6 +364,9 @@ app.post(
   async (request, response) => {
     const { name } = request.body;
     console.log(`Request Body: ${JSON.stringify(request.body)}`);
+    if (!name){
+        response.status(400).json({ error: "Name is required" });
+    }
     try {
       const addDepartment = `
             INSERT INTO departments(name)
@@ -318,6 +390,9 @@ app.put(
   async (request, response) => {
     const { id } = request.params;
     const { name } = request.body;
+    if (!name){
+        response.status(400).json({ error: "Name is required" });
+    }
     try {
       const updateDepartment = `
             UPDATE
@@ -404,6 +479,9 @@ app.post(
   async (request, response) => {
     const { title } = request.body;
     console.log(`Request Body: ${JSON.stringify(request.body)}`);
+    if (!title){
+        response.status(400).json({ error: "Title is required" });
+    }
     try {
       const addRole = `
             INSERT INTO roles(title)
@@ -503,6 +581,18 @@ app.post(
   accessControl(["HR Manager", "HR Administrator"]),
   async (request, response) => {
     const { employeeId, reviewDate, rating, comments } = request.body;
+    if (!employeeId){
+        response.status(400).json({ error: "employee id is required" });
+    }
+    if (!reviewDate){
+        response.status(400).json({ error: "review date is required" });
+    }
+     if (!rating){
+        response.status(400).json({ error: "rating is required" });
+    }
+    if (!comments){
+        response.status(400).json({ error: "comments is required" });
+    }
     try {
       const addReview = `INSERT INTO performance_reviews(employee_id, review_date, rating, comments)
             VALUES('${employeeId}','${reviewDate}','${rating}','${comments}')`;
